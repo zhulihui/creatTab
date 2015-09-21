@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>tab插件编写_zlh_01</title>
+    <script type="text/javascript" src="http://e.sinajs.cn/p/scripts/jquery-1.8.2.js?v=150326X01"></script>
+    <script type="text/javascript" src="tabPlug.js"></script> 
+</head>
+<body>
+     <div class="tabPlug_JS" >
+         <div class="plug_tab_JS"></div>
+         <div class="plug_content_JS">这是第一个标签new</div>
+         <div class="plug_content_JS">这是第二个标签new</div>
+         <div class="plug_content_JS">这是第三个标签</div>
+     </div>
+
+    <div class="tabPlug_JS2" >
+         <div class="plug_tab_JS"></div>
+         <div class="plug_content_JS">这是第一个标签new</div>
+         <div class="plug_content_JS">这是第二个标签new</div>
+         <div class="plug_content_JS">这是第三个标签</div>
+     </div>    
+    
+    
+     <script type="text/javascript">
+            $(function(){
+              var len = 6;     
+              var plug_one = new tabPlug({
+                            creatNum:len,    //需要生成的标签的个数
+                            currentIndex:"1",  //初始的时候默认选中的标签，从0开始，默认的是0
+                         });
+              plug_one.init();
+
+              var len = 10;     
+              var plug_two = new tabPlug({
+                            creatNum:len,
+                            currentIndex:"0",
+                             tabPlugParent:"tabPlug_JS2", //插件的外轮廓  
+                         });
+              plug_two.init();
+
+      
+  
+         
+
+             
+
+           
+              
+            });
+     </script>
+     <style type="text/css">
+        *{list-style: none; margin:0; padding:0;}
+        .tabPlug_JS{width:100%;}
+        .tabPlug_JS .plug_tab_JS{width:100%;  overflow: hidden;}
+        .tabPlug_JS ul.tab_plug_ul li{background-color: #c3c3c3; float: left;  text-align: center; margin-left: 5px; padding:0 10px;}
+        .tabPlug_JS ul.tab_plug_ul li.active{ background-color: #ff6600}
+        .tabPlug_JS ul.tab_plug_ul li.tag_hover{background-color:red}
+        .tabPlug_JS .plug_content_JS{display: none;}
+
+        .tabPlug_JS2{width:100%; margin-top:100px;}
+        .tabPlug_JS2 .plug_tab_JS{width:100%; overflow: hidden;}
+        .tabPlug_JS2 ul.tab_plug_ul li{background-color: #c3c3c3; float: left;  text-align: center; margin-left: 5px; padding:0 10px;}
+        .tabPlug_JS2 ul.tab_plug_ul li.active{ background-color: #ff6600}
+        .tabPlug_JS2 ul.tab_plug_ul li.tag_hover{background-color:red}
+        .tabPlug_JS2 .plug_content_JS{display: none;}
+    </style>
+</body>
